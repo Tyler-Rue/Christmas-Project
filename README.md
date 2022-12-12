@@ -1,2 +1,2 @@
 # Christmas-Project
-Mini holiday themed project using Java
+Mini holiday themed project using JavaFX
