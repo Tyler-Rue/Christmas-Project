@@ -10,7 +10,7 @@ public class Board
     {
 
         board = new Cell[6][6];
-        String[] images = {"buddy_the_elf", "santa", "kevin", "frosty"};
+        String[] images = {"buddy", "santa", "kevin", "frosty"};
         Random randomGenerator = new Random();
         while (!isBoardFull())
         {

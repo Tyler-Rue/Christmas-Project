@@ -1,47 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.SVGPath?>
 
-
-<?import javafx.scene.text.Text?>
-<AnchorPane style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/8.0.111"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.eliassen.Controller">
+<AnchorPane style="-fx-background-color: transparent;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eliassen.Controller">
     <children>
-        <AnchorPane fx:id="root" minHeight="373.0" minWidth="439.0" AnchorPane.bottomAnchor="5.0"
-                    AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+        <AnchorPane fx:id="root" minHeight="373.0" minWidth="439.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
             <children>
-                <BorderPane fx:id="body" styleClass="body" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0"
-                            AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
+                <BorderPane fx:id="body" styleClass="body" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
                     <top>
                         <HBox fx:id="menuPanel">
-                            <Button fx:id="start" text="Play Again"/>
+                            <Button fx:id="restart" onAction="#initialize" text="Play Again" />
                         </HBox>
                     </top>
                     <center>
                         <HBox>
-                            <GridPane xmlns:fx="http://javafx.com/fxml"
-                                      alignment="center" hgap="10" vgap="10"
-                                      fx:id="gameMatrix">
+                            <GridPane fx:id="gameMatrix" alignment="center" hgap="10" vgap="10" xmlns:fx="http://javafx.com/fxml">
                                 <padding>
-                                    <Insets top="25" right="25" bottom="25" left="25"/>
+                                    <Insets bottom="25" left="25" right="25" top="25" />
                                 </padding>
 
                             </GridPane>
                         </HBox>
                     </center>
                 </BorderPane>
-                <Pane fx:id="handPaneMac" prefHeight="14.0" AnchorPane.leftAnchor="69.0" AnchorPane.rightAnchor="2.0"
-                      AnchorPane.topAnchor="2.0"/>
+                <Pane fx:id="handPaneMac" prefHeight="14.0" AnchorPane.leftAnchor="69.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
             </children>
         </AnchorPane>
     </children>
     <effect>
-        <DropShadow blurType="GAUSSIAN"/>
+        <DropShadow blurType="GAUSSIAN" />
     </effect>
 </AnchorPane>
