@@ -30,11 +30,11 @@ public class Controller
         {
             for (int column = 0; column < 6; column++)
             {
-                FileInputStream input = new FileInputStream("/Github/Christmas-Project/MemoryMatch/src/main/resources/Images/card_back.png");
+                FileInputStream input = new FileInputStream("src/main/resources/com/eliassen/card_back.png");
                 Image image = new Image(input);
                 ImageView imageView = new ImageView(image);
-                imageView.setFitWidth(90);
-                imageView.setFitHeight(90);
+                imageView.setFitWidth(150);
+                imageView.setFitHeight(150);
                 imageView.setUserData(row + "," + column);
                 imageView.setOnMouseClicked(event -> {
                     try
@@ -62,7 +62,7 @@ public class Controller
 
         String image = board.board[rowSelected][columnSelected].value;
 
-        FileInputStream imageFile = new FileInputStream("/Github/Christmas-Project/MemoryMatch/src/main/resources/Images/" + image + ".png");
+        FileInputStream imageFile = new FileInputStream("src/main/resources/com/eliassen/" + image + ".png");
 
         Image selectedImage = new Image(imageFile);
         ((ImageView) sourceComponent).setImage(selectedImage);
@@ -92,12 +92,12 @@ public class Controller
             {
                 int indexFirstCardInList = (firstCard.row * 6) + firstCard.column;
 
-                FileInputStream questionFile = new FileInputStream("/Github/Christmas-Project/MemoryMatch/src/main/resources/Images/card_back.png");
-                Image questionImage = new Image(questionFile);
-                ((ImageView) gameMatrix.getChildren().get(indexFirstCardInList)).setImage(questionImage);
+                FileInputStream cardBackFile = new FileInputStream("src/main/resources/com/eliassen/card_back.png");
+                Image cardBackImage = new Image(cardBackFile);
+                ((ImageView) gameMatrix.getChildren().get(indexFirstCardInList)).setImage(cardBackImage);
 
                 int indexSecondCardInList = (secondCard.row * 6) + secondCard.column;
-                ((ImageView) gameMatrix.getChildren().get(indexSecondCardInList)).setImage(questionImage);
+                ((ImageView) gameMatrix.getChildren().get(indexSecondCardInList)).setImage(cardBackImage);
             }
 
             firstCard = board.board[rowSelected][columnSelected];

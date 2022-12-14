@@ -7,11 +7,11 @@ public class Cell
     public int column;
     public boolean wasGuessed;
 
-    Cell(String value, int row, int col)
+    Cell(String value, int row, int column)
     {
         this.value = value;
         this.row = row;
-        this.column = col;
+        this.column = column;
         this.wasGuessed = false;
     }
 }

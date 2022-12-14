@@ -16,7 +16,7 @@ public class App extends Application
     @Override
     public void start(Stage stage) throws IOException
     {
-        URL url = new File("/Github/Christmas-Project/MemoryMatch/src/main/resources/com/eliassen/hello-view.fxml").toURI().toURL();
+        URL url = new File("src/main/resources/com/eliassen/hello-view.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         stage.setTitle("Christmas Memory Match");
         stage.setScene(new Scene(root));

@@ -18,24 +18,24 @@ public class Board
             String randomImageSelected = images[randomImageIndex];
 
             int randomRow1 = randomGenerator.nextInt(6);
-            int randomCol1 = randomGenerator.nextInt(6);
-            while (board[randomRow1][randomCol1] != null)
+            int randomColumn1 = randomGenerator.nextInt(6);
+            while (board[randomRow1][randomColumn1] != null)
             {
                 randomRow1 = randomGenerator.nextInt(6);
-                randomCol1 = randomGenerator.nextInt(6);
+                randomColumn1 = randomGenerator.nextInt(6);
             }
 
             int randomRow2 = randomGenerator.nextInt(6);
-            int randomCol2 = randomGenerator.nextInt(6);
-            while ((randomRow1 == randomRow2 && randomCol1 == randomCol2)
-                    || board[randomRow2][randomCol2] != null)
+            int randomColumn = randomGenerator.nextInt(6);
+            while ((randomRow1 == randomRow2 && randomColumn1 == randomColumn)
+                    || board[randomRow2][randomColumn] != null)
             {
                 randomRow2 = randomGenerator.nextInt(6);
-                randomCol2 = randomGenerator.nextInt(6);
+                randomColumn = randomGenerator.nextInt(6);
             }
 
-            board[randomRow1][randomCol1] = new Cell(randomImageSelected, randomRow1, randomCol1);
-            board[randomRow2][randomCol2] = new Cell(randomImageSelected, randomRow2, randomCol2);
+            board[randomRow1][randomColumn1] = new Cell(randomImageSelected, randomRow1, randomColumn1);
+            board[randomRow2][randomColumn] = new Cell(randomImageSelected, randomRow2, randomColumn);
 
         }
 
