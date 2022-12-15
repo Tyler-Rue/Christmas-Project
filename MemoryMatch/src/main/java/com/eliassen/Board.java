@@ -5,13 +5,12 @@ import java.util.Random;
 public class Board
 {
     public Cell[][] board = new Cell[6][6];
+    Random randomGenerator = new Random();
 
     public void populateMatrix()
     {
-
-        board = new Cell[6][6];
         String[] images = {"buddy", "santa", "kevin", "frosty"};
-        Random randomGenerator = new Random();
+
         while (!isBoardFull())
         {
             int randomImageIndex = randomGenerator.nextInt(images.length);
@@ -36,9 +35,7 @@ public class Board
 
             board[randomRow1][randomColumn1] = new Cell(randomImageSelected, randomRow1, randomColumn1);
             board[randomRow2][randomColumn] = new Cell(randomImageSelected, randomRow2, randomColumn);
-
         }
-
     }
 
     private boolean isBoardFull()

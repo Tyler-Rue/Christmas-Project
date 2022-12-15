@@ -6,13 +6,15 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class Controller
 {
-
     @FXML
     public GridPane gameMatrix;
 
@@ -20,6 +22,8 @@ public class Controller
 
     Cell firstCard = null;
     Cell secondCard = null;
+
+    MediaPlayer mediaPlayer;
 
     @FXML
     public void initialize() throws FileNotFoundException
@@ -49,7 +53,6 @@ public class Controller
                 gameMatrix.add(imageView, row, column);
             }
         }
-
     }
 
     public void cardListener(MouseEvent event) throws FileNotFoundException
@@ -67,12 +70,10 @@ public class Controller
         Image selectedImage = new Image(imageFile);
         ((ImageView) sourceComponent).setImage(selectedImage);
         checkIfMatchingPairWasFound(rowSelected, columnSelected);
-
     }
 
     public void checkIfMatchingPairWasFound(int rowSelected, int columnSelected) throws FileNotFoundException
     {
-
         if (firstCard == null)
         {
             firstCard = board.board[rowSelected][columnSelected];
@@ -103,5 +104,19 @@ public class Controller
             firstCard = board.board[rowSelected][columnSelected];
             secondCard = null;
         }
+    }
+    @FXML
+    public void play(MouseEvent event) {
+        String fileName = "jinglebells.mp3";
+        playHolidayMusic(fileName);
+    }
+
+    private void playHolidayMusic(String fileName){
+        String path = getClass().getResource(fileName).getPath();
+        System.out.println(path);
+        Media media = new Media(new File(path).toURI().toString());
+        mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+        mediaPlayer.play();
     }
 }

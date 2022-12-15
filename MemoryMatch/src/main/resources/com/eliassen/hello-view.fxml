@@ -5,28 +5,37 @@
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1000.0" style="-fx-background-color: green;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eliassen.Controller">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1000.0" styleClass="bodybg" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eliassen.Controller">
     <children>
-        <AnchorPane fx:id="root" minHeight="373.0" minWidth="439.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+        <AnchorPane fx:id="root" minHeight="373.0" minWidth="439.0" stylesheets="@styles.css" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
             <children>
                 <BorderPane fx:id="body" styleClass="body" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0">
                     <top>
                         <HBox fx:id="menuPanel">
-                            <Button fx:id="restart" onAction="#initialize" text="Play Again" />
+                         <Pane fx:id="handPaneMac" prefHeight="14.0" />
+                            <Button fx:id="restart" onAction="#initialize" text="Play Again" translateX="450.0" />
                         </HBox>
                     </top>
                     <center>
                         <HBox>
-                            <GridPane fx:id="gameMatrix" alignment="center" hgap="10" prefHeight="501.0" prefWidth="18.0" vgap="10" xmlns:fx="http://javafx.com/fxml">
+                            <GridPane fx:id="gameMatrix" alignment="center" hgap="10" prefHeight="501.0" prefWidth="110.0" vgap="10" xmlns:fx="http://javafx.com/fxml">
                                 <padding>
                                     <Insets bottom="25" left="25" right="25" top="25" />
                                 </padding>
+                        <columnConstraints>
+                           <ColumnConstraints />
+                        </columnConstraints>
+                        <rowConstraints>
+                           <RowConstraints />
+                        </rowConstraints>
 
                             </GridPane>
                         </HBox>
                     </center>
+               <bottom>
+                  <Button mnemonicParsing="false" onMouseClicked="#play" text="Play Music" BorderPane.alignment="CENTER" />
+               </bottom>
                 </BorderPane>
-                <Pane fx:id="handPaneMac" prefHeight="14.0" AnchorPane.leftAnchor="69.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="2.0" />
             </children>
         </AnchorPane>
     </children>
