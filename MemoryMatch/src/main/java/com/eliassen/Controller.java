@@ -105,13 +105,16 @@ public class Controller
             secondCard = null;
         }
     }
+
     @FXML
-    public void play(MouseEvent event) {
+    public void play(MouseEvent event)
+    {
         String fileName = "jinglebells.mp3";
         playHolidayMusic(fileName);
     }
 
-    private void playHolidayMusic(String fileName){
+    private void playHolidayMusic(String fileName)
+    {
         String path = getClass().getResource(fileName).getPath();
         System.out.println(path);
         Media media = new Media(new File(path).toURI().toString());
